@@ -1,0 +1,169 @@
+1.Print odd number using anonymous function
+function odd(arr){
+    for(i=0 ; i<=arr.length-1 ; i++){
+        if(arr[i]%2 !=0){
+            console.log(arr[i])
+        }
+    }
+}
+console.log(odd([2,3,54,33,57,89]));
+
+Print odd number using IIFE
+
+function odd(arr){
+    for(i=0 ; i<=arr.length-1 ; i++){
+        if(arr[i]%2 !=0){
+            console.log(arr[i])
+        }
+    }
+}odd([2,3,54,33,57,89])
+
+
+2.Sum of all number in an array using function
+
+function res(arr){
+let sum =0;
+for(var i in arr){
+    sum+=arr[i];
+    console.log(sum)
+    }
+}
+console.log(res([1,2,3,4]));
+
+sum of all number using IIFE
+
+function res(arr){
+    let sum =0;
+    for(var i in arr){
+        sum+=arr[i];
+        console.log(sum)
+        }
+    }(res([1,2,3,4]));
+    
+3.return prime number in an array using function
+
+const array =[1,2,3,4,5,8,10,11,-3,-2];
+function isPrime(num){
+    for(let i=0 ;i<num ;i++){
+        if(num%2 ==0){
+            return false;
+        }
+    }
+    return num>1;
+}
+console.log(array.filter(isPrime))
+
+prime number using IIFE
+
+const array =[1,2,3,4,5,8,10,11,-3,-2];
+function isPrime(num){
+    for(let i=0 ;i<num ;i++){
+        if(num%2 ==0){
+            return false;
+        }
+    }
+    return num>1;
+}(array.filter(isPrime));
+
+4.Return all the palindrome in an array usinf function
+
+const array=[131,'madam',140,11,'did',54]
+function isPalindrom(arr) {
+    const str=String(arr)
+    let i=0;
+    let j=str.length-1;
+    while(i<j){
+        if(str[i]===str[j]){
+            i++;
+            j--;
+        }else{
+            return false;
+        }
+    }
+    return true;
+}
+console.log(array.filter(isPalindrom));
+
+5.Return median of two sorted arrays of same size
+
+function getMedian(ar1, ar2, n)
+{
+	var i = 0;
+	var j = 0;
+	var count;
+	var m1 = -1, m2 = -1;
+	for (count = 0; count <= n; count++)
+	{ 
+		if (i == n)
+		{
+			m1 = m2;
+			m2 = ar2[0];
+			break;
+		}
+		else if (j == n)
+		{
+			m1 = m2;
+			m2 = ar1[0];
+			break;
+		}
+		if (ar1[i] <= ar2[j])
+		{
+			m1 = m2; 
+			m2 = ar1[i];
+			i++;
+		}
+		else
+		{
+			m1 = m2; 
+			m2 = ar2[j];
+			j++;
+		}
+	}
+
+	return (m1 + m2)/2;
+}
+var ar1 = [1, 12, 15, 26, 38];
+var ar2 = [2, 13, 17, 30, 45];
+var n1 = ar1.length;
+var n2 = ar2.length;
+if (n1 == n2)
+	console.log("Median is "+ getMedian(ar1, ar2, n1));
+else
+	console.log("Doesn't work for arrays of unequal size");
+
+//6.Remove duplicates from an array.
+
+function uniq(a) {
+    return a.sort().filter(function(item, pos, ary) {
+        return item != ary[pos - 1];
+    });
+}
+const a = [9,0,0,2,3,33,1,33,9]
+console.log(uniq(a));
+
+7.Rotate an array by k times
+
+const rotateArray1 = function(nums, k) {
+
+    for (let i = 0; i < k; i++) {
+        nums.unshift(nums.pop());
+    }
+  
+    return nums;
+  }
+  const nums = [1,2,4,58,99,0,58];
+  const k =3;
+  console.log(rotateArray1(nums,k));
+
+ 8.convert the string into titlecase in an array
+ 
+ function titleCase(str) {
+    str = str.toLowerCase().split(' ');
+    for (var i = 0; i < str.length; i++) {
+        str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+    }
+    return str.join(' ');
+    }
+    console.log(titleCase("hello world"));
+    
+   

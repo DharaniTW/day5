@@ -1,0 +1,22 @@
+const array = [2,3,54,33,57,11]
+let odd= arr => {
+    for(i=0 ; i<=arr.length-1 ; i++){
+        if(arr[i]%2 !=0){
+            console.log(arr[i])
+        }
+    }
+}
+console.log(array.filter(odd));
+
+
+1.Return prime number in an array using arrow function.
+const array =[1,2,3,4,5,8,10,11,-3,-2];
+let isPrime = num => {
+    for(let i=0 ;i<num ;i++){
+        if(num%2 ==0){
+            return false;
+        }
+    }
+    return num>1;
+}
+console.log(array.filter(isPrime));
